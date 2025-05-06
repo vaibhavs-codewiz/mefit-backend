@@ -37,10 +37,10 @@ public class UserController {
     {
 		return userService.saveUser(userDto);
     }
-	@GetMapping(value="/login",consumes="application/json",produces="application/json")
-	public UserLoginResponse loginUser(@RequestBody UserDto userDto)
-	{
-		return userService.loginUser(userDto);
+	
+	@PostMapping(value="/login", consumes="application/json", produces="application/json")
+	public UserLoginResponse loginUser(@RequestBody UserDto userDto) {
+	    return userService.loginUser(userDto);
 	}
 
 	@PostMapping(value="/gym/subscribe",consumes="application/json",produces="application/json")
